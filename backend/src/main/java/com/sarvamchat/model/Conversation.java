@@ -51,6 +51,8 @@ public class Conversation {
     public Instant getCreatedAt() { return createdAt; }
     public Instant getUpdatedAt() { return updatedAt; }
 
+    public void touch() { this.updatedAt = Instant.now(); }
+
     public List<Message> getMessages() { return messages; }
     public void setMessages(List<Message> messages) { this.messages = messages; }
 }
