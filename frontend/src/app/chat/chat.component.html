@@ -34,17 +34,22 @@
       <div #scrollAnchor></div>
     </div>
 
+    <div *ngIf="warmingUp" class="warmup">
+      <span class="spinner"></span>
+      Waking up the server — first response can take up to a minute on free hosting.
+    </div>
+
     <div *ngIf="error" class="error">{{ error }}</div>
 
     <div class="composer">
       <textarea
         [(ngModel)]="input"
         (keydown)="onKeydown($event)"
-        placeholder="Type a message and press Enter…"
+        [placeholder]="warmingUp ? 'Waking up server…' : 'Type a message and press Enter…'"
         rows="2"
-        [disabled]="sending"
+        [disabled]="sending || warmingUp"
       ></textarea>
-      <button (click)="send()" [disabled]="sending || !input.trim()">Send</button>
+      <button (click)="send()" [disabled]="sending || warmingUp || !input.trim()">Send</button>
     </div>
   </main>
 </div>
