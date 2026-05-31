@@ -24,11 +24,25 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   input = '';
   sending = false;
   error = '';
+  warmingUp = false;
+  private warmupTimer?: ReturnType<typeof setTimeout>;
 
   constructor(private chat: ChatService) {}
 
   ngOnInit(): void {
-    this.refreshConversations();
+    this.warmupTimer = setTimeout(() => (this.warmingUp = true), 2000);
+    this.chat.listConversations().subscribe({
+      next: (list) => {
+        this.conversations = list;
+        this.endWarmup();
+      },
+      error: () => this.endWarmup()
+    });
+  }
+
+  private endWarmup(): void {
+    if (this.warmupTimer) clearTimeout(this.warmupTimer);
+    this.warmingUp = false;
   }
 
   ngAfterViewChecked(): void {
