@@ -1,5 +1,10 @@
 # Sarvam Chatbot
 
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.4-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Angular](https://img.shields.io/badge/Angular-17-DD0031?logo=angular&logoColor=white)](https://angular.dev/)
+[![Java](https://img.shields.io/badge/Java-17-007396?logo=openjdk&logoColor=white)](https://www.java.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+
 Sarvam Chatbot is a full-stack chat application with a Spring Boot backend and an Angular frontend. It stores conversations in PostgreSQL and sends prompts to Sarvam AI for responses.
 
 ## Features
