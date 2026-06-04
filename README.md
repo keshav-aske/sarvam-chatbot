@@ -71,6 +71,11 @@ The Angular app runs on `http://localhost:4200` and calls the backend at `http:/
 
 ## Production Notes
 
+Live deployments:
+
+- Frontend: `https://sarvam-chatbot-frontend.onrender.com`
+- Backend: `https://sarvam-chatbot-backend.onrender.com`
+
 The frontend production environment is configured to call the deployed backend at:
 
 `https://sarvam-chatbot-backend.onrender.com/api`
